@@ -1,0 +1,7 @@
+sudo : required
+services :
+      - docker
+before-install :
+      - docker build -t shibudas/docker-frontend-react -f Dockerfile.dev
+script :
+      - docker run shibudas/docker-frontend-react npm run test -- --coverage
