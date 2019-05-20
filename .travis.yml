@@ -1,7 +1,7 @@
 sudo : required
 services :
       - docker
-before-install :
+before_install :
       - docker build -t shibudas/frontend -f Dockerfile.dev .
 script :
       - docker run shibudas/frontend npm run test -- --coverage
