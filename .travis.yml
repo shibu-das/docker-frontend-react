@@ -5,5 +5,17 @@ before_install :
       - docker build -t shibudas/docker-frontend-react -f Dockerfile.dev .
 script :
       - docker run shibudas/docker-frontend-react npm run test -- --coverage
+deploy :
+      provider : elasticbeanstalk
+      region : "us-east-1"
+      app    : "docker"
+      env    : FrontendReactApp-env
+      bucket_name : "elasticbeanstalk-us-east-1-177534457134" 
+      bucket_path : "frontend-react-app" 
+      on :
+            branch : master
+      access_key_id : $AWS_ACCESS_KEY
+      secret_access_key :
+            secure : "$AWS_SECRET_KEY"
 
       
