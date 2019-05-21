@@ -12,10 +12,10 @@ deploy:
       secret_access_key:
             secure: "$AWS_SECRET_KEY"
       region: "us-east-1"
-      app: "frontend-react-app"
-      env: "FrontendReactApp-env"
+      app: "docker-react-app"
+      env: "DockerReactApp-env"
       bucket_name: "elasticbeanstalk-us-east-1-177534457134" 
-      bucket_path: "frontend-react-app" 
+      bucket_path: "docker-react-app" 
       on:
             branch: master
       
